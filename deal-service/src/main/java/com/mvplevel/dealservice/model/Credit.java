@@ -39,7 +39,7 @@ public class Credit {
     @Column(name = "flc")
     private BigDecimal flc;
 
-    @Column(name = "payment")
+    @Column(name = "payment", columnDefinition = "jsonb")
     @Type(type = "jsonb")
     private List<PaymentScheduleElement> paymentSchedule;
 

@@ -17,7 +17,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DealController {
 
-//    @Autowired
     private final DealService dealService;
 
     @PostMapping("/application")

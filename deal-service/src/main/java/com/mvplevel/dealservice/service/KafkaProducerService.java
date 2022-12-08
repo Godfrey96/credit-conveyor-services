@@ -22,6 +22,7 @@ public class KafkaProducerService {
 
     private void sendMessage(String topic, Theme theme, Long id) throws JsonProcessingException {
 
+        // get application id first
         Application application = dealService.getApplicationById(id);
 
         EmailMessage emailMessage = EmailMessage.builder()

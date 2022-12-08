@@ -36,6 +36,7 @@ public class DealService {
     private ConveyorFeignClient conveyorFeignClient;
 
 
+    // create a new loan application
     public List<LoanOfferDTO> createApplication(LoanApplicationRequestDTO applicationRequest){
 
         // create a new client

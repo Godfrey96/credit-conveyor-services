@@ -1,5 +1,6 @@
 package com.mvplevel.conveyorservice.dto;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.validation.constraints.*;
@@ -7,6 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
+@Builder
 public class LoanApplicationRequestDTO {
 
     @DecimalMin(value = "10000", message = "must be equal or greater than 10000")

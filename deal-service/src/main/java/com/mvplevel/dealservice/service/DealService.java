@@ -64,7 +64,8 @@ public class DealService {
 
     // get application by id
     public Application getApplicationById(Long id){
-        return applicationRepository.findById(id).orElseThrow(() -> new ApplicationNotFoundException("No such application found"));
+        return applicationRepository.findById(id)
+                .orElseThrow(() -> new ApplicationNotFoundException("No such application found"));
     }
 
     // get all applications

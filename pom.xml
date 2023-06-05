@@ -20,6 +20,7 @@
         <module>deal-service</module>
         <module>application-service</module>
         <module>dossier-service</module>
+        <module>gateway</module>
     </modules>
 
     <properties>

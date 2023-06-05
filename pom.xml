@@ -18,6 +18,7 @@
     <modules>
         <module>conveyor-service</module>
         <module>deal-service</module>
+        <module>application-service</module>
     </modules>
 
     <properties>

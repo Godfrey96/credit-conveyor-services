@@ -214,10 +214,17 @@ public class ScoringService {
 
     // calculate age
     public long calcAge(ScoringDataDTO scoringData){
-        if (scoringData.getBirthDate() != null)
-            return Period.between(scoringData.getBirthDate(), LocalDate.now()).getYears();
-        else
-            throw new ScoringException("Age cannot be less than 18 years");
+        if (scoringData.getBirthDate() != null){
+            int age = Period.between(scoringData.getBirthDate(), LocalDate.now()).getYears();
+
+            if (age >= 18)
+                return age;
+            else
+                throw new ScoringException("Age cannot be less than 18");
+        }
+        else{
+            throw new ScoringException("Age cannot be null");
+        }
     }
 
     // calculate rate month
@@ -240,6 +247,11 @@ public class ScoringService {
 
         BigDecimal monthlyCalc = BigDecimal.ONE.add(monthlyRate).pow(term).subtract(BigDecimal.ONE);
         BigDecimal monthlyRateDiv = monthlyRate.divide(monthlyCalc, 5, RoundingMode.CEILING);
+
+        if (monthlyRateDiv.equals(BigDecimal.ZERO)){
+            log.error("Cannot divide by zero");
+        }
+
         BigDecimal monthlyRateAdd = monthlyRate.add(monthlyRateDiv);
 
         return monthlyRateAdd;

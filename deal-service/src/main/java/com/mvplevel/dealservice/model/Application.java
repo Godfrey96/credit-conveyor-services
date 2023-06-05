@@ -5,6 +5,7 @@ import com.mvplevel.dealservice.constants.ApplicationStatus;
 import com.mvplevel.dealservice.dto.ApplicationStatusHistoryDTO;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
@@ -17,6 +18,7 @@ import java.util.List;
 @Entity
 @Table(name = "application")
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)

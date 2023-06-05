@@ -1,4 +1,4 @@
-package com.mvplevel.dossierservice.constants;
+package com.mvplevel.dealservice.constants;
 
 public enum Theme {
     FINISH_REGISTRATION,

@@ -61,6 +61,16 @@ public class DealService {
         return loanOffersDTOs;
     }
 
+    // get application by id
+    public Application getApplicationById(Long id){
+        return applicationRepository.findById(id).orElseThrow(() -> new ApplicationNotFoundException("No such application found"));
+    }
+
+    // get all applications
+    public List<Application> getAllApplications(){
+        return applicationRepository.findAll();
+    }
+
     public void applyOffer(LoanOfferDTO loanOfferDTO){
 
         // retrieve application from the database by applicationID

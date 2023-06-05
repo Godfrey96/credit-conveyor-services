@@ -1,6 +1,6 @@
 package com.mvplevel.dossierservice.dto;
 
-import com.mvplevel.dossierservice.constants.Theme;
+import com.mvplevel.dealservice.constants.Theme;
 
 public class EmailMessage {
     private String address;

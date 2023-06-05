@@ -22,7 +22,8 @@ import java.util.List;
 @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
 public class Application {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "application_sequence", sequenceName = "application_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "application_sequence")
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -39,7 +40,7 @@ public class Application {
     @Column(name = "creation_date")
     private LocalDate creationDate;
 
-    @Column
+    @Column(name = "applied_offer", columnDefinition = "jsonb")
     @Type(type = "jsonb")
     private LoanOfferDTO appliedOffer;
 
@@ -49,7 +50,7 @@ public class Application {
     @Column(name = "ses_code")
     private Integer sesCode;
 
-    @Column
+    @Column(name = "status_history", columnDefinition = "jsonb")
     @Type(type = "jsonb")
     private List<ApplicationStatusHistoryDTO> statusHistory;
 

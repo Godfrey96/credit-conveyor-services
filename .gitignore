@@ -3,3 +3,4 @@ conveyor-service/target
 deal-service/target
 application-service/target
 dossier-service/target
+gateway/target
